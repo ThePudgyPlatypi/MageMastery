@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="unit1_test" instance="Unit1\LogPathInfo\Observer\Log" shared="false" />
+    </event>
+</config>
