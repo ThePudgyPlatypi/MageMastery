@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+
+# Created by https://www.toptal.com/developers/gitignore/api/magento2
+# Edit at https://www.toptal.com/developers/gitignore?templates=magento2
+
+### Magento2 ###
 /.buildpath
 /.cache
 /.metadata
@@ -16,6 +20,7 @@ atlassian*
 /.idea
 /.gitattributes
 /app/config_sandbox
+/app/etc/config.php
 /app/etc/env.php
 /app/code/Magento/TestModule*
 /lib/internal/flex/uploader/.actionScriptProperties
@@ -68,50 +73,5 @@ atlassian*
 /generated/*
 !/generated/.htaccess
 .DS_Store
-=======
-#--------------------------#
-# Magento Default Files    #
-#--------------------------#
 
-/PATCH_*.sh
-
-/app/etc/local.xml
-
-/media/*
-!/media/.htaccess
-
-!/media/customer
-/media/customer/*
-!/media/customer/.htaccess
-
-!/media/dhl
-/media/dhl/*
-!/media/dhl/logo.jpg
-
-!/media/downloadable
-/media/downloadable/*
-!/media/downloadable/.htaccess
-
-!/media/xmlconnect
-/media/xmlconnect/*
-
-!/media/xmlconnect/custom
-/media/xmlconnect/custom/*
-!/media/xmlconnect/custom/ok.gif
-
-!/media/xmlconnect/original
-/media/xmlconnect/original/*
-!/media/xmlconnect/original/ok.gif
-
-!/media/xmlconnect/system
-/media/xmlconnect/system/*
-!/media/xmlconnect/system/ok.gif
-
-/var/*
-!/var/.htaccess
-
-!/var/package
-/var/package/*
-!/var/package/*.xml
-
->>>>>>> d956d3a491297e76fa81923253b5ec6d790cce19
+# End of https://www.toptal.com/developers/gitignore/api/magento2
