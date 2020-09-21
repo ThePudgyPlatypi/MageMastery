@@ -1,4 +1,4 @@
 define(['uiComponent'], function(Component) {
-    console.log("this is from my component");
+    'use strict'
     return Component.extend({});
 })
