@@ -29,5 +29,21 @@ define(["uiComponent", "jquery"], function (Component, $) {
 
             this.tasks(items);
         },
+
+        deleteTask: function(taskId) {
+            let tasks = [];
+
+            if(this.tasks().length === 1) {
+                this.tasks(tasks);
+            }
+
+            this.tasks().forEach((task) => {
+                if(task.id !== taskId) {
+                    tasks.push(task);
+                }
+            })
+
+            this.tasks(tasks);
+        }
     });
 });
