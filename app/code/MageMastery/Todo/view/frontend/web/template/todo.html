@@ -8,7 +8,12 @@
                 'data-id': task().id
             },
             click: switchStatus" ></a>
-        <span class="label" data-bind="text: task().label" >
+        <span class="label" data-bind="text: task().label" />
+        <a class="action delete" data-bind="
+            attr: {
+                'data-id': task().id
+            }
+        ">Delete</a>
      </li>
 </ul>
 <!-- /ko -->
