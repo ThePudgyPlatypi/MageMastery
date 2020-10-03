@@ -7,6 +7,7 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
     console.log("UI component is loading");
     return Component.extend({
         defaults: {
+            buttonSelector: "#add-new-task-button",
             newTask: "",
             tasks: [
                 { id: 1, label: "Task 4", status: false },
@@ -66,5 +67,11 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
             });
             this.newTask('');
         },
+        clickKey: function(data, event) {
+            if(event.keyCode === 13) {
+                event.preventDefault();
+                $(this.buttonSelector).click();
+            }
+        }
     });
 });

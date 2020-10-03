@@ -4,7 +4,7 @@
         class="task-input-field"
         id="todo-task-input"
         name="task"
-        data-bind="value: newTask"
+        data-bind="value: newTask, event: { 'keyup': clickKey }"
         placeholder="Add new task..."
     />
     <div class="actions-toolbar">
