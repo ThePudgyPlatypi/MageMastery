@@ -7,6 +7,7 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
     console.log("UI component is loading");
     return Component.extend({
         defaults: {
+            newTask: "",
             tasks: [
                 { id: 1, label: "Task 4", status: false },
                 { id: 2, label: "Task 5", status: false },
@@ -15,8 +16,7 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
         },
 
         initObservable: function () {
-            this._super().observe(["tasks"]);
-            // this.tasks().push({label: "Task 7"});
+            this._super().observe(["tasks", "newTask"]);
             return this;
         },
 
@@ -57,6 +57,14 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
                     },
                 },
             });
+        },
+        addTask: function () {
+            this.tasks.push({
+                id: this.tasks().length + 1,
+                label: this.newTask(),
+                status: false,
+            });
+            this.newTask('');
         },
     });
 });
