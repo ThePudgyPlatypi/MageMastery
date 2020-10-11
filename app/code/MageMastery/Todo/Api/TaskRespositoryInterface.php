@@ -7,7 +7,7 @@ namespace MageMastery\Todo\Api;
 
 interface TaskRepositoryInterface
 {
-    public function save();
-    public function delete();
+    public function getList();
+    public function get(int $taskId);
 
 }
