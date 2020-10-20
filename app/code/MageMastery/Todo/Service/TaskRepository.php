@@ -24,7 +24,7 @@ class TaskRepository implements TaskRepositoryInterface
     {
         $this->taskResource = $taskResource;
         $this->taskFactory = $taskFactory;
-        $this->collectionProcessor = $collectionProcessor;
+        $this->collectionProcessor = $collectionInterface;
         $this->searchResultsFactory = $searchResultFactory;
     }
 

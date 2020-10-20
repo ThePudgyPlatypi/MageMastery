@@ -6,7 +6,7 @@ namespace MageMastery\Todo\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
 
-interface TaskSearchResultsInterface extends SearchResultsInterface
+interface TaskSearchResultInterface extends SearchResultsInterface
 {
     /**
      *
