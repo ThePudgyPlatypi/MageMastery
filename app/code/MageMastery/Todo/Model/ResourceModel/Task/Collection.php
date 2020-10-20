@@ -47,8 +47,7 @@ class Collection extends AbstractCollection implements TaskSearchResultInterface
         return $this->getSize();
     }
 
-
-    public function setTotalCount() {
+    public function setTotalCount($totalCount) {
         return $this;
     }
 }
