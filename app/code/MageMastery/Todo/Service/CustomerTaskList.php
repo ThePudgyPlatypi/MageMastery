@@ -21,6 +21,6 @@ class CustomerTaskList implements CustomerTaskListInterface
 
     public function getList()
     {
-        $this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems();
+        return $this->taskRepository->getList($this->searchCriteriaBuilder->create())->getItems();
     }
 }

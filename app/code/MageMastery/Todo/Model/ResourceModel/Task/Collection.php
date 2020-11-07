@@ -39,7 +39,7 @@ class Collection extends AbstractCollection implements TaskSearchResultInterface
      * @return Collection
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria = null)
+    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria)
     {
         $this->searchCriteria = $searchCriteria;
         return $this;
@@ -72,7 +72,7 @@ class Collection extends AbstractCollection implements TaskSearchResultInterface
      * @return $this
      * @throws \Exception
      */
-    public function setItems(array $items = null)
+    public function setItems(array $items)
     {
         if (!$items) {
             return $this;
