@@ -27,8 +27,8 @@
         <a
             data-bind="
             attr: {
-                class: 'status ' + (task().status ? 'complete' : 'open'),
-                'data-id': task().id
+                class: 'status ' + (task().status === 'complete' ? 'complete' : 'open'),
+                'data-id': task().task_id
             },
             click: switchStatus"
         ></a>
@@ -37,9 +37,9 @@
             class="action delete"
             data-bind="
             attr: {
-                'data-id': task().id
+                'data-id': task().task_id
             }, 
-            click: deleteTask.bind($data, task().id)
+            click: deleteTask.bind($data, task().task_id)
         "
             >Delete</a
         >

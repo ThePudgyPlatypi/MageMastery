@@ -1,7 +1,13 @@
-define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
+define([
+    "uiComponent",
+    "jquery", 
+    "Magento_Ui/js/modal/confirm",
+    "MageMastery_Todo/js/service/task"
+], function (
     Component,
     $,
-    modal
+    modal,
+    taskService
 ) {
     "use strict";
     console.log("UI component is loading");
@@ -9,15 +15,17 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
         defaults: {
             buttonSelector: "#add-new-task-button",
             newTask: "",
-            tasks: [
-                { id: 1, label: "Task 4", status: false },
-                { id: 2, label: "Task 5", status: false },
-                { id: 3, label: "Task 6", status: true },
-            ],
+            tasks: [],
         },
 
         initObservable: function () {
             this._super().observe(["tasks", "newTask"]);
+            var self = this;
+            console.log("I am here");
+            taskService.getList().then(function (tasks) {
+                self.tasks(tasks);
+                return tasks;
+            })
             return this;
         },
 
@@ -25,8 +33,8 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
             const taskId = $(event.target).data("id");
 
             let items = this.tasks().map((task) => {
-                if (task.id === taskId) {
-                    task.status = !task.status;
+                if (task.task_id === taskId) {
+                    task.status = task.status === 'open' ? 'complete' : 'open';
                 }
 
                 return task;
@@ -49,7 +57,7 @@ define(["uiComponent", "jquery", "Magento_Ui/js/modal/confirm"], function (
                         }
 
                         this.tasks().forEach((task) => {
-                            if (task.id !== taskId) {
+                            if (task.task_id !== taskId) {
                                 tasks.push(task);
                             }
                         });
