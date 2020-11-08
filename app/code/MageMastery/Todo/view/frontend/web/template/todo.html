@@ -22,6 +22,7 @@
     </div>
 </div>
 <!-- if ko: ($data.tasks) -->
+<h3>My Tasks</h3>
 <ul class="tasks">
     <li repeat="foreach: tasks, item: 'task'">
         <a
@@ -45,4 +46,10 @@
         >
     </li>
 </ul>
+<!-- /ko -->
+
+<!-- ko if: (!tasks().length)-->
+<div class="message info empty">
+    <span>There are no open tasks. Please add a new one.</span>
+</div>
 <!-- /ko -->
