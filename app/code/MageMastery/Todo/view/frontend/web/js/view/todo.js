@@ -2,12 +2,14 @@ define([
     "uiComponent",
     "jquery", 
     "Magento_Ui/js/modal/confirm",
-    "MageMastery_Todo/js/service/task"
+    "MageMastery_Todo/js/service/task",
+    "MageMastery_Todo/js/model/loader"
 ], function (
     Component,
     $,
     modal,
-    taskService
+    taskService,
+    loader
 ) {
     "use strict";
     console.log("UI component is loading");
@@ -82,10 +84,14 @@ define([
                 status: 'open',
             }
 
+            loader.startLoader();
+
             taskService.create(task).then(function(taskId) {
                 task.task_id = taskId;
                 self.tasks.push(task);
                 self.newTask('');
+            }).finally(function() {
+                loader.stopLoader();
             })
         },
         clickKey: function(data, event) {
