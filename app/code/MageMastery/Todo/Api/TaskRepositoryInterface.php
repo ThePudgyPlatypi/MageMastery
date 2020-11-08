@@ -10,6 +10,19 @@ use Magento\Framework\Api\SearchCriteriaInterface;
  */
 interface TaskRepositoryInterface
 {
+    /**
+     * Undocumented function
+     *
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return TaskSearchResultInterface
+     */
     public function getList(SearchCriteriaInterface $searchCriteria): TaskSearchResultInterface;
+
+    /**
+     * Undocumented function
+     *
+     * @param integer $taskId
+     * @return void
+     */
     public function get(int $taskId);
 }
