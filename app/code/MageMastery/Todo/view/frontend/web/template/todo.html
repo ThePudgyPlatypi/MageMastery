@@ -31,9 +31,9 @@
                 class: 'status ' + (task().status === 'complete' ? 'complete' : 'open'),
                 'data-id': task().task_id
             },
-            click: switchStatus"
+            click: switchStatus",
+            translate="task().label"
         ></a>
-        <span class="label" data-bind="text: task().label" />
         <a
             class="action delete"
             data-bind="

@@ -4,7 +4,13 @@
     padding-left: 2px;
     
     li {
-        display: flex;
+        display: block;
+        padding: 12px 20px 12px 25px;
+        margin: 0;
+        font-size: 1.3rem;
+        color: #006400;
+        padding-left: 45px;
+        position: relative;
 
         .label {
             margin-top: 2px;
@@ -13,24 +19,62 @@
         }
 
         .status {
-            display: inline-flex;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-
-            &:hover {
-                border: 2px solid #82cc78;
-                background:  #82cc78;
-            }
+            color: #575757;
+            display: inline-block;
+            width: 80%;
 
             &.open  {
-                border: 2px solid #ccc;
+                &:before {
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: #ccc;
+                    content: '\e601';
+                    font-family: 'luma-icons';
+                    margin: -12px 0 0;
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    left: 0;
+                    top: 22px;
+                    width: 45px;
+                    position: absolute;
+                    text-align: center;
+                }
             }
 
             &.complete {
-                border: 2px solid #82cc78;
-                background:  #82cc78;
+                color: #ccc;
+                text-decoration: line-through;
+
+                &:before {
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: #006400;
+                    content: '\e60e';
+                    font-family: 'luma-icons';
+                    margin: -12px 0 0;
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    left: 0;
+                    top: 22px;
+                    width: 45px;
+                    position: absolute;
+                    text-align: center;
+                }
             }
+        }
+
+        .delete {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        a {
+            cursor: pointer;
         }
     }
 }
