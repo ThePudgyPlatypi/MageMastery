@@ -7,6 +7,7 @@ namespace MageMastery\Todo\Service;
 use MageMastery\Todo\Api\Data\TaskInterface;
 use MageMastery\Todo\Api\TaskManagementInterface;
 use MageMastery\Todo\Model\ResourceModel\Task;
+use Magento\Framework\Exception\AlreadyExistsException;
 
 class TaskManagement implements TaskManagementInterface
 {
@@ -21,6 +22,7 @@ class TaskManagement implements TaskManagementInterface
      *
      * @param TaskInterface $task
      * @return boolean
+     * @throws AlreadyExistsException
      */
     public function save(TaskInterface $task): bool
     {
@@ -32,6 +34,7 @@ class TaskManagement implements TaskManagementInterface
      *
      * @param TaskInterface $task
      * @return boolean
+     * @throws AlreadyExistsException
      */
     public function delete(TaskInterface $task): bool
     {

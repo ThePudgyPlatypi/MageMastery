@@ -21,7 +21,7 @@ define([
         initObservable: function () {
             this._super().observe(["tasks", "newTask"]);
             var self = this;
-            console.log("I am here");
+
             taskService.getList().then(function (tasks) {
                 self.tasks(tasks);
                 return tasks;
@@ -53,17 +53,23 @@ define([
                     confirm: () => {
                         let tasks = [];
 
-                        if (this.tasks().length === 1) {
+                        taskService.delete(self.tasks().find(function (task) {
+                            if(task.task_id) {
+                                return task;
+                            }
+                        }))
+
+                        if (self.tasks().length === 1) {
                             this.tasks(tasks);
                         }
 
-                        this.tasks().forEach((task) => {
+                        self.tasks().forEach((task) => {
                             if (task.task_id !== taskId) {
                                 tasks.push(task);
-                            }
+                            } 
                         });
 
-                        this.tasks(tasks);
+                        self.tasks(tasks);
                     },
                 },
             });
