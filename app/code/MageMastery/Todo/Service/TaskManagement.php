@@ -17,13 +17,25 @@ class TaskManagement implements TaskManagementInterface
         $this->resource = $resource;
     }
 
-    public function save(TaskInterface $task)
+    /**
+     *
+     * @param TaskInterface $task
+     * @return boolean
+     */
+    public function save(TaskInterface $task): bool
     {
         $this->resource->save($task);
+        return true;
     }
-
-    public function delete(TaskInterface $task)
+    
+    /**
+     *
+     * @param TaskInterface $task
+     * @return boolean
+     */
+    public function delete(TaskInterface $task): bool
     {
         $this->resource->delete($task);
+        return true;
     }
 }

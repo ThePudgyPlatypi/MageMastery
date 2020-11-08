@@ -23,4 +23,29 @@ interface TaskInterface
      * @return string
      */
     public function getLabel(): string;
+
+    /**
+     * Set Id of Task
+     * 
+     * @param integer $taskId
+     * @return void
+     */
+    public function setTaskId(int $taskId);
+
+    /**
+     * Set Status of Task
+     * 
+     * @param string $status
+     * @return void
+     */
+    public function setStatus(string $status);
+
+    /**
+     * Set Label of task
+     *
+     * @param string $label
+     * @return void
+     */
+    public function setLabel(string $label);
+
 }
