@@ -75,12 +75,18 @@ define([
             });
         },
         addTask: function () {
-            this.tasks.push({
-                id: this.tasks().length + 1,
+            const self = this;
+
+            var task = {
                 label: this.newTask(),
-                status: false,
-            });
-            this.newTask('');
+                status: 'open',
+            }
+
+            taskService.create(task).then(function(taskId) {
+                task.task_id = taskId;
+                self.tasks.push(task);
+                self.newTask('');
+            })
         },
         clickKey: function(data, event) {
             if(event.keyCode === 13) {

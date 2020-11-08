@@ -48,7 +48,9 @@
 </ul>
 <!-- /ko -->
 
+<!-- if ko: ($data.tasks().length == 0) -->
 <div class="message info empty">
     <span>There are no open tasks. Please add a new one.</span>
+    <span class="label" data-bind="text: $data.tasks()" />
 </div>
 <!-- /ko -->
